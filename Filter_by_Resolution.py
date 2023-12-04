@@ -2,15 +2,20 @@ import os, shutil
 from os import listdir
 
 # Find and list all complexes in folder that in samae location with this script
-cwd = os.getcwd() + '\\CovPDB_complexes'
+complex_folder = "CovPDB_complexes"
+cwd = os.path.join(os.getcwd(), complex_folder)
+
 complexes = [f for f in listdir(cwd)]
 
 # Create new folder in current directory
-newfolder = os.getcwd() + '\\Resolution_2.5'
+name_newfolder = "Resolution_2.5"
+newfolder = os.path.join(os.getcwd(), name_newfolder)
+
 if not os.path.exists(newfolder):
     os.makedirs(newfolder)
 
-
+# Seaching and filtering
+count = 0
 for protein in complexes: # All index in "complexes" list are also name of the folder and name of the pdb file
     
     protein_folder = os.path.join(cwd, protein) # Directory of parent folder
@@ -32,3 +37,4 @@ for protein in complexes: # All index in "complexes" list are also name of the f
                     #print(f'No resolution data of {protein}')
                     pass
    
+print(f'>>>> {count} folder filtered <<<<')
