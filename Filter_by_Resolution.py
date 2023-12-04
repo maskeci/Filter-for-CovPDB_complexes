@@ -31,7 +31,7 @@ for protein in complexes: # All index in "complexes" list are also name of the f
                         destination_folder = os.path.join(newfolder, protein)
                         shutil.copytree(protein_folder, destination_folder)
                         print(f'{protein} with the resolution of {resolution} is copied to {destination_folder} ') 
-
+                        count += 1
                     break  
                 except:
                     #print(f'No resolution data of {protein}')
