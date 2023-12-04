@@ -7,4 +7,5 @@ https://drug-discovery.vm.uni-freiburg.de/covpdb/download
 
 Unziped folder and script should be in same location.
 
+Run Filter_n_Scrap.py.
 I also added notebook version of it, just run all. 
